@@ -10,10 +10,13 @@
     :root { color-scheme: light; --ink:#222b33; --muted:#626c75; --accent:#265779; --rule:#e1e6ea; }
     * { box-sizing:border-box; }
     body { margin:0; background:#fff; color:var(--ink); font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-    main { max-width:900px; margin:0 auto; padding:76px 40px 64px; }
+    main { max-width:900px; margin:0 auto; padding:40px 40px 64px; }
     a { color:var(--accent); text-decoration:none; text-underline-offset:3px; }
     a:hover { text-decoration:underline; }
     a:focus-visible { outline:2px solid var(--accent); outline-offset:4px; }
+    .landscape-figure { margin:0 0 38px; }
+    .landscape { display:block; width:100%; height:auto; max-height:240px; object-fit:cover; object-position:center 52%; -webkit-mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent), linear-gradient(to bottom, transparent, #000 14%, #000 88%, transparent); -webkit-mask-composite:source-in; mask-image:linear-gradient(to right, transparent, #000 8%, #000 92%, transparent), linear-gradient(to bottom, transparent, #000 14%, #000 88%, transparent); mask-composite:intersect; }
+    .landscape-caption { margin:2px 12px 0; color:#737e87; font-size:12px; line-height:1.4; text-align:right; }
     .intro { display:grid; grid-template-columns:230px 1fr; gap:30px; align-items:start; margin-bottom:44px; }
     h1 { font:normal 44px/1.15 Georgia,"Times New Roman",serif; letter-spacing:-1px; margin:0 0 10px; }
     .affiliation { color:var(--muted); margin:0 0 19px; }
@@ -39,12 +42,16 @@
     .abstract-text { margin:10px 0 0; padding-left:16px; border-left:2px solid var(--rule); line-height:1.7; font-size:14px; }
     .course { display:flex; justify-content:space-between; gap:22px; margin:9px 0; }
     .course time { color:var(--muted); font-size:15px; flex-shrink:0; }
-    @media(max-width:600px) { main{padding:36px 24px;} .intro{grid-template-columns:1fr;gap:24px;margin-bottom:32px;} .portrait{grid-row:1;width:150px;height:auto;} h1{font-size:36px;} h2{font-size:23px;} .course{display:block;} .course time{display:block;} .awards li{gap:8px;} }
+    @media(max-width:600px) { main{padding:24px 24px 48px;} .landscape-figure{margin-bottom:30px;} .landscape{max-height:none;} .landscape-caption{margin:2px 4px 0;font-size:11px;} .intro{grid-template-columns:1fr;gap:24px;margin-bottom:32px;} .portrait{grid-row:1;width:150px;height:auto;} h1{font-size:36px;} h2{font-size:23px;} .course{display:block;} .course time{display:block;} .awards li{gap:8px;} }
     @media print { main{padding:20px;max-width:none;} .portrait{background:none;} a{color:inherit;} .paper, .awards li{break-inside:avoid;} }
   </style>
 </head>
 <body>
 <main>
+  <figure class="landscape-figure">
+    <img class="landscape" src="mt-hood-pencil-v2.jpg" alt="Mount Hood above a forest and lake, illustrated in colored pencil" width="2113" height="744">
+    <figcaption class="landscape-caption">Mt. Hood · JSM 2024 trip to Portland</figcaption>
+  </figure>
   <header class="intro">
     <img class="portrait" src="portrait.png" alt="Illustrated portrait of Yizhe Ding" width="1122" height="1402">
     <div>
